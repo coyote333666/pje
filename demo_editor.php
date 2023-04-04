@@ -32,7 +32,8 @@ var TabExp = document.getElementById('exptable');
 	*/
 	
 $(TabExp).tableExport({
- 	bootstrap: false
+ 	bootstrap: false,
+	ignoreCols: [4,5]
 });	
 
 $(document).ready(function(){  
