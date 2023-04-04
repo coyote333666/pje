@@ -4,7 +4,11 @@ Server and client side library of simple functions in plain PHP and JQUERY UI fo
 
 The editing functions are inspired by the blog [PHP Ajax Crud using JQuery UI Dialog][8] from [Weblesson][9]
 
-![image](https://user-images.githubusercontent.com/24400013/220802581-59266b52-8214-49d8-8a14-fa924351f43c.png)
+![image](https://user-images.githubusercontent.com/24400013/229821275-cafffe98-f3ab-45d0-9af8-5bbc029850ae.png)
+![image](https://user-images.githubusercontent.com/24400013/229822533-839ff47d-1bdd-46b9-8077-9f5eec3c277b.png)
+![image](https://user-images.githubusercontent.com/24400013/229822694-9fb44013-b2b3-4209-a403-2a334b5a043d.png)
+![image](https://user-images.githubusercontent.com/24400013/229822929-8f633f13-bbec-40fd-97f5-231c2c0cbee8.png)
+![image](https://user-images.githubusercontent.com/24400013/229823256-230dd9c8-fea7-4f81-8385-898a0e486269.png)
 
 Requirements
 ------------
