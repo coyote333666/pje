@@ -5,10 +5,10 @@ Client and server side library of simple functions in JQUERY UI and PHP for edit
 The editing functions are inspired by the blog [PHP Ajax Crud using JQuery UI Dialog][8] from [Weblesson][9]
 
 ![image](https://user-images.githubusercontent.com/24400013/232899941-93e4c8fd-f55a-40e8-989b-3c061eded5f0.png)
-![image](https://user-images.githubusercontent.com/24400013/232900517-ad432ecc-dc68-41a2-b72c-3316ed3c0c72.png)
-![image](https://user-images.githubusercontent.com/24400013/232900861-478fc865-1b89-40ee-94da-5097a5946772.png)
-![image](https://user-images.githubusercontent.com/24400013/232901025-c907b7fa-5a25-4f9e-a5fc-45625bf9877e.png)
-![image](https://user-images.githubusercontent.com/24400013/232901529-057b935e-757a-4424-bdaf-cfdd8bd11571.png)
+![image](https://user-images.githubusercontent.com/24400013/232901912-4ccf9840-f7b6-4a20-a20d-2cf05d7a8088.png)
+![image](https://user-images.githubusercontent.com/24400013/232902025-6b71c2cc-d561-4d5a-9d1f-735966b05976.png)
+![image](https://user-images.githubusercontent.com/24400013/232902106-dd795234-f55b-4546-92db-9fec946364e2.png)
+![image](https://user-images.githubusercontent.com/24400013/232902252-7b098361-b4f4-4e02-b9b8-5e967dddf219.png)
 
 Requirements
 ------------
