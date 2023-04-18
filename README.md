@@ -4,11 +4,11 @@ Client and server side library of simple functions in JQUERY UI and PHP for edit
 
 The editing functions are inspired by the blog [PHP Ajax Crud using JQuery UI Dialog][8] from [Weblesson][9]
 
-![image](https://user-images.githubusercontent.com/24400013/229821275-cafffe98-f3ab-45d0-9af8-5bbc029850ae.png)
-![image](https://user-images.githubusercontent.com/24400013/229822533-839ff47d-1bdd-46b9-8077-9f5eec3c277b.png)
-![image](https://user-images.githubusercontent.com/24400013/229822694-9fb44013-b2b3-4209-a403-2a334b5a043d.png)
-![image](https://user-images.githubusercontent.com/24400013/229822929-8f633f13-bbec-40fd-97f5-231c2c0cbee8.png)
-![image](https://user-images.githubusercontent.com/24400013/229827267-66547d46-a3e8-4bc9-a5fd-ddcfc91e8ac4.png)
+![image](https://user-images.githubusercontent.com/24400013/232898371-e95e843f-4694-4001-ac3f-3c354c476087.png)
+![image](https://user-images.githubusercontent.com/24400013/232898554-c6a72106-e1a8-4bb4-bc83-2ed2e2b4553b.png)
+![image](https://user-images.githubusercontent.com/24400013/232898694-738ce2b1-d010-4051-8c24-120ed1d29a5c.png)
+![image](https://user-images.githubusercontent.com/24400013/232898911-502d46ef-0e9d-4921-afd4-1722cb13e84d.png)
+
 
 Requirements
 ------------
