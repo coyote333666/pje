@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * pje2 - PHP jquery UI editor
+	 * pje - PHP jquery UI editor
 	 *
-	 * @see https://github.com/coyote333666/pje2 The pje2 GitHub project
+	 * @see https://github.com/coyote333666/pje The pje GitHub project
 	 *
 	 * @author    Vincent Fortier <coyote333666@gmail.com>
 	 * @copyright 2023 Vincent Fortier
@@ -20,8 +20,8 @@ define("FILE_DEMO"				, "demo.php");
 define("FILE_DEMO_FETCH"	, "demo_fetch.php");
 define("FILE_DEMO_ACTION"	, "demo_action.php");
 define("FILE_DEMO_EDITOR"		, "demo_editor.php");
-define("APP_TITLE"				, "Demo pje2 PHP Jquery UI Editor");
-define("DIR_APP"					, "/pje2/");
+define("APP_TITLE"				, "Demo pje PHP Jquery UI Editor");
+define("DIR_APP"					, "/pje/");
 define("PARAMETER_REDIRECTOR"	, "?page=");
 define("FILE_HEADER"			, "header.html");
 define("PG_SERVER"				, "localhost");

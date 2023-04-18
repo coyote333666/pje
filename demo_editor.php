@@ -1,8 +1,8 @@
 <script>
 	/**
-	 * pje2 - PHP jquery UI editor
+	 * pje - PHP jquery UI editor
 	 *
-	 * @see https://github.com/coyote333666/pje2 The pje2 GitHub project
+	 * @see https://github.com/coyote333666/pje The pje GitHub project
 	 *
 	 * @author    Vincent Fortier <coyote333666@gmail.com>
 	 * @copyright 2023 Vincent Fortier

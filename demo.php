@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * pje2 - PHP jquery UI editor
+	 * pje - PHP jquery UI editor
 	 *
-	 * @see https://github.com/coyote333666/pje2 The pje2 GitHub project
+	 * @see https://github.com/coyote333666/pje The pje GitHub project
 	 *
 	 * @author    Vincent Fortier <coyote333666@gmail.com>
 	 * @copyright 2023 Vincent Fortier
@@ -21,7 +21,7 @@
 
 <div class='container'>
   <br />
-    <h3 align='center'>DEMO pje2 - PHP Jquery UI Editor</h3><br />
+    <h3 align='center'>DEMO pje - PHP Jquery UI Editor</h3><br />
   <br />
   <div align='right' style='margin-bottom:5px;'>
     <button type='button' name='add' id='add' class='btn btn-success btn-xs'>Add</button>
