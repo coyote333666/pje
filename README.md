@@ -5,8 +5,8 @@ Client and server side library of simple functions in JQUERY UI and PHP for edit
 The editing functions are inspired by the blog [PHP Ajax Crud using JQuery UI Dialog][8] from [Weblesson][9]
 
 ![image](https://user-images.githubusercontent.com/24400013/232899941-93e4c8fd-f55a-40e8-989b-3c061eded5f0.png)
-![image](https://user-images.githubusercontent.com/24400013/232898554-c6a72106-e1a8-4bb4-bc83-2ed2e2b4553b.png)
-![image](https://user-images.githubusercontent.com/24400013/232898694-738ce2b1-d010-4051-8c24-120ed1d29a5c.png)
+![image](https://user-images.githubusercontent.com/24400013/232900517-ad432ecc-dc68-41a2-b72c-3316ed3c0c72.png)
+![image](https://user-images.githubusercontent.com/24400013/232900635-5e6e8a9d-d100-4fe4-8ecd-94b3701ce8d7.png)
 ![image](https://user-images.githubusercontent.com/24400013/232898911-502d46ef-0e9d-4921-afd4-1722cb13e84d.png)
 
 
