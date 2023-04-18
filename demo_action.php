@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * pje - PHP jquery UI editor
+	 * pje2 - PHP jquery UI editor
 	 *
-	 * @see https://github.com/coyote333666/pje The pje GitHub project
+	 * @see https://github.com/coyote333666/pje2 The pje2 GitHub project
 	 *
 	 * @author    Vincent Fortier <coyote333666@gmail.com>
 	 * @copyright 2023 Vincent Fortier
@@ -12,6 +12,10 @@
 	 * FITNESS FOR A PARTICULAR PURPOSE.
 	 */
 
+require_once('constant.php');
+	 
+require_once(FILE_FUNCTION);
+	
 if(isset($_POST["action"]))
 {
 	if($_POST["action"] == "insert")

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml'>
-	<head>
-		<title><?php echo(APP_TITLE); ?></title>
-		<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
-		
-		<style type="text/css">
+<!--		
 	/**
-	 * pje - PHP jquery UI editor
+	 * pje2 - PHP jquery UI editor
 	 *
-	 * @see https://github.com/coyote333666/pje The pje GitHub project
+	 * @see https://github.com/coyote333666/pje2 The pje2 GitHub project
 	 *
 	 * @author    Vincent Fortier <coyote333666@gmail.com>
 	 * @copyright 2023 Vincent Fortier
@@ -17,128 +13,12 @@
 	 * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
 	 * FITNESS FOR A PARTICULAR PURPOSE.
 	 */
+-->
 
+<head>
+		<title><?php echo(APP_TITLE); ?></title>
+		<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
 		
-			/******************************************************************************/
-			/* Pagination */
-			
-			.pagination {
-			font:18px Arial, Helvetica, sans-serif;
-			margin:2px 0 0 2px;
-			}
-			
-			.pagination a {
-			background:#fff;
-			border:1px solid #0033cc;
-			color:#0033cc;
-			margin:2px;
-			padding:.2em .4em;
-			text-decoration:none
-			}
-			
-			.pagination a:hover {
-			background:#fff;
-			border:1px solid #bd88fe;
-			color:#bd88fe
-			}
-			
-			.pagination span.inactive {
-			background:#fff;
-			border:1px solid #b3b3ff;
-			color:#b3b3ff;
-			margin:2px;
-			padding:.2em .4em
-			}
-			
-			.pagination span.active {
-			background:#f4ebff;
-			border:1px solid #000099;
-			color:#000099;
-			font-weight:700;
-			margin:2px;
-			padding:.2em .4em
-			}
-
-			/******************************************************************************/
-			/* Tables */
-
-			table, tbody
-			{
-				background-color	: rgb(218, 218, 218);
-				border-color		: rgb(0, 0, 0);
-				border-style		: solid;
-				border-radius		: 3px;
-				border-spacing		: 0px;
-				border-width		: 1px;
-				color				: rgb(0, 0, 0);
-				font-family			: 'Trebuchet MS', Helvetica, sans-serif;
-				font-size			: 12pt;
-				margin				: 0px;
-				padding				: 3px;
-				text-align			: center;
-				vertical-align		: middle;
-			}
-
-			table.left td
-			{
-				text-align			: left;
-			}
-
-			table.left th
-			{
-				text-align			: left;
-			}
-
-			table.transparent
-			{
-				background-color	: rgb(255, 255, 255);
-				border				: 0px;
-				padding				: 0px;
-			}
-
-			/* Apply the style, only to the first level of "<td>" tags, of the table that uses this class*/
-			.transparent>tbody>tr>td
-			{
-				background-color	: rgb(255, 255, 255);
-				border				: 0px;
-			}
-
-			tr:nth-child(odd).alternate
-			{
-				background-color	: rgb(224, 224, 224);
-			}
-
-			tr:nth-child(even).alternate
-			{
-				background-color	: rgb(255, 255, 255);
-			}
-
-			th, thead, tfoot
-			{
-				background-color	: rgb(174, 174, 174);
-				border-color		: rgb(0, 0, 0);
-				border-style		: solid;
-				border-radius		: 0px;
-				border-spacing		: 0px;
-				border-width		: 1px;
-				padding				: 3px;
-			}
-
-			td
-			{
-				border-color		: rgb(0, 0, 0);
-				border-bottom-style	: solid;
-				border-left-style	: dotted;
-				border-right-style	: dotted;
-				border-top-style	: solid;
-				border-radius		: 0px;
-				border-spacing		: 0px;
-				border-width		: 1px;
-				padding				: 3px;
-			}
-
-		</style>			
-
 		<!-- jQuery -->
 		<script class='include' type='text/javascript' src='<?php echo(FILE_JQUERY); ?>'></script>	
 

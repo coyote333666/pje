@@ -1,8 +1,8 @@
 <script>
 	/**
-	 * pje - PHP jquery UI editor
+	 * pje2 - PHP jquery UI editor
 	 *
-	 * @see https://github.com/coyote333666/pje The pje GitHub project
+	 * @see https://github.com/coyote333666/pje2 The pje2 GitHub project
 	 *
 	 * @author    Vincent Fortier <coyote333666@gmail.com>
 	 * @copyright 2023 Vincent Fortier
@@ -12,31 +12,62 @@
 	 * FITNESS FOR A PARTICULAR PURPOSE.
 	 */
 
-var TabExp = document.getElementById('exptable');
-  /*
-  $(TabExp).tableExport({
-      headers: true,
-      footers: true,
-      formats: ['xlsx', 'csv', 'txt'],
-      filename: 'id',
-      bootstrap: true,
-      position: 'bottom',
-      ignoreRows: null,
-      ignoreCols: null,
-      ignoreCSS: '.tableexport-ignore',
-      emptyCSS: '.tableexport-empty',
-      trimWhitespace: false,
-      RTL: false,
-      sheetname: 'id'
-  });
-	*/
-	
-$(TabExp).tableExport({
- 	bootstrap: false,
-	ignoreCols: [4,5]
-});	
+
+sessionStorage.setItem("linesPerPage",5);
+sessionStorage.setItem("currentPage",1);
+sessionStorage.setItem("order",1);
+sessionStorage.setItem("direction","ASC");
 
 $(document).ready(function(){  
+
+	$("select.lpp").change(function(){
+	  var selectedLpp = $(this).children("option:selected").val();
+		sessionStorage.setItem("linesPerPage",selectedLpp);
+		sessionStorage.setItem("currentPage",1);
+		load_data();
+	});
+
+	$(document).on('click', '.page-item', function(){
+		var id = $(this).attr("id");
+		sessionStorage.setItem("currentPage",id);
+		load_data();
+	});
+
+	$(document).on('click', '.column-header', function(){
+		var colOrder = $(this).attr("id");
+		if(sessionStorage.getItem("order") == colOrder)
+		{
+			if(sessionStorage.getItem("direction") == 'ASC')
+			{
+				sessionStorage.setItem("direction",'DESC');
+			}
+			else
+			{
+				sessionStorage.setItem("direction",'ASC');
+			}
+		}
+		sessionStorage.setItem("order",colOrder);
+		load_data();
+	});
+
+	load_data();
+	
+	function load_data()
+	{
+		$.ajax({
+			url: '<?php echo(DIR_APP . FILE_DEMO_FETCH); ?>',
+			method: "POST",
+			data: { 
+    		linesPerPage: sessionStorage.getItem("linesPerPage"), 
+    		currentPage: sessionStorage.getItem("currentPage"), 
+    		order: sessionStorage.getItem("order") + " " + sessionStorage.getItem("direction")
+ 			},			
+			success:function(data)
+			{
+				$('#user_data').html(data);
+			}
+		});
+	}
    
 	$("#user_dialog").dialog({
 		autoOpen:false,
@@ -103,7 +134,7 @@ $(document).ready(function(){
 			$('#form_action').attr('disabled', 'disabled');
 			var form_data = $(this).serialize();
 			$.ajax({
-				url: '<?php echo(PARAMETER_REDIRECTOR . FILE_DEMO_ACTION); ?>',
+				url: '<?php echo(DIR_APP . FILE_DEMO_ACTION); ?>',
 				method:"POST",
 				data:form_data,
 				success:function(data)
@@ -111,7 +142,7 @@ $(document).ready(function(){
 					$('#user_dialog').dialog('close');
 					$('#action_alert').html(data);
 					$('#action_alert').dialog('open');
-					window.location.reload();
+					load_data();
 					$('#form_action').attr('disabled', false);
 				}
 			});
@@ -127,12 +158,13 @@ $(document).ready(function(){
 		var id = $(this).attr('id');
 		var action = 'fetch_single';
 		$.ajax({
-			url: '<?php echo(PARAMETER_REDIRECTOR . FILE_DEMO_ACTION); ?>',
+			url: '<?php echo(DIR_APP . FILE_DEMO_ACTION); ?>',
 			method:"POST",
 			data:{id:id, action:action},
 			dataType:"json",
 			success:function(data)
 			{
+				console.log("clic sur edit");
 				$('#column_1').val(data.column_1);
 				$('#column_2').val(data.column_2);
 				$('#column_3').val(data.column_3);
@@ -153,7 +185,7 @@ $(document).ready(function(){
 				var id = $(this).data('id');
 				var action = 'delete';
 				$.ajax({
-					url: '<?php echo(PARAMETER_REDIRECTOR . FILE_DEMO_ACTION); ?>',
+					url: '<?php echo(DIR_APP . FILE_DEMO_ACTION); ?>',
 					method:"POST",
 					data:{id:id, action:action},
 					success:function(data)
@@ -161,7 +193,7 @@ $(document).ready(function(){
 						$('#delete_confirmation').dialog('close');
 						$('#action_alert').html(data);
 						$('#action_alert').dialog('open');
-						window.location.reload();
+						load_data();
 					}
 				});
 			},

@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * pje - PHP jquery UI editor
+	 * pje2 - PHP jquery UI editor
 	 *
-	 * @see https://github.com/coyote333666/pje The pje GitHub project
+	 * @see https://github.com/coyote333666/pje2 The pje2 GitHub project
 	 *
 	 * @author    Vincent Fortier <coyote333666@gmail.com>
 	 * @copyright 2023 Vincent Fortier
@@ -21,14 +21,24 @@
 
 <div class='container'>
   <br />
-    <h3 align='center'>DEMO PJE - PHP Jquery UI Editor</h3><br />
+    <h3 align='center'>DEMO pje2 - PHP Jquery UI Editor</h3><br />
   <br />
   <div align='right' style='margin-bottom:5px;'>
     <button type='button' name='add' id='add' class='btn btn-success btn-xs'>Add</button>
   </div>
   <div class='table-responsive' id='user_data'>
   </div>
-	<br />
+  <div align='left' style='margin-bottom:5px;'>
+    Lines/page :
+    <select name='linesPerPage' class="lpp">
+      <option value='5'>5 lines</option>
+      <option value='10'>10 lines</option>
+      <option value='20'>20 lines</option>
+      <option value='50'>50 lines</option>
+      <option value='100'>100 lines</option>
+      <option value='500'>500 lines</option>
+    </select>
+  </div>
 </div>
 
 
@@ -66,32 +76,10 @@
 
 <?php
 
-  if(isset($_GET["linesPerPage"]))					{	$linesPerPage 			= $_GET["linesPerPage"];			} else {$linesPerPage					= 5;}
-  if(isset($_GET["currentPage"]))						{	$currentPage 				= $_GET["currentPage"];		} else {$currentPage					= 1;}
-
-  $query =
-  "SELECT *" . PHP_EOL . 
-  "FROM test"  . PHP_EOL;
-
-  if(isset($_GET["order"]))
-  {
-  $query .=	"ORDER BY " . $_GET["order"] ;
-  }	
-  else
-  {
-  $query .= "ORDER BY 1";
-  }
-
-  require(FILE_QUERY);
-
-  echo(fncDisplayTableEditor($_GET, $recordset, FILE_DEMO, $linesPerPage));	
-
-  require(FILE_FOOTER);
-
 
   echo('</body>');
 	echo('</html>');
 
   require(FILE_DEMO_EDITOR);
-
 ?>
+

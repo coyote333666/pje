@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * pje - PHP jquery UI editor
+	 * pje2 - PHP jquery UI editor
 	 *
-	 * @see https://github.com/coyote333666/pje The pje GitHub project
+	 * @see https://github.com/coyote333666/pje2 The pje2 GitHub project
 	 *
 	 * @author    Vincent Fortier <coyote333666@gmail.com>
 	 * @copyright 2023 Vincent Fortier
@@ -12,39 +12,6 @@
 	 * FITNESS FOR A PARTICULAR PURPOSE.
 	 */
 
-	function sortHeader($getParam, $pOrder, $label, $paramName)
-	{
-		$order			= "";
-		$header			= "";
-
-		if(isset($_GET[$paramName]))	
-		{	
-			$order	= $_GET[$paramName];				
-			if($order == $pOrder . ' DESC')
-			{
-				$getParam[$paramName] = $pOrder . ' ASC';		
-				$header .= "<th><a href='?" .  http_build_query($getParam) . "'>" . $label . "&darr;</a></th>";
-			}
-			elseif($order == $pOrder . ' ASC')
-			{
-				$getParam[$paramName] = $pOrder . ' DESC';
-				$header .= "<th><a href='?" .  http_build_query($getParam) . "'>" . $label . "&uarr;</a></th>";
-			}
-			else
-			{
-				$getParam[$paramName] = $pOrder . ' ASC';
-				$header .= "<th><a href='?" .  http_build_query($getParam) . "'>" . $label . "</a></th>";
-			}
-		}
-		else
-		{
-			$getParam[$paramName] = $pOrder . ' ASC';
-			$header .= "<th><a href='?" .  http_build_query($getParam) . "'>" . $label . "</a></th>";
-		}
-
-		return ($header);
-
-	}
 
 	function fncQueryPg
 	(
@@ -144,18 +111,14 @@
 
 	/**
 	* Show pagination where this function is called
-	* @param string $url 			The URL or name of the page calling the function, ex: 'index.php' or 'http://example.com/'
-	* @param string $link 			The name of the parameter for the page displayed in the URL, ex: '?page=' or '?&p='
 	* @param int $total 			The total number of pages
 	* @param int $current 			The number of the current page
 	* @param int $adj (optional) 	The number of pages displayed on each side of the current page (default: 3)
 	* @return 						The character string used to display the pagination
 	*/
 
-	function paginate($urlGET, $link, $total, $current, $adj=3) {
+	function paginateEditor($total, $current, $adj=3) {
 		// Initialization of variables
-		if(isset($urlGET["currentPage"]))			{	unset($urlGET["currentPage"]);			} 
-		$url = '?' . http_build_query($urlGET);
 		$prev = $current - 1; // previous page number
 		$next = $current + 1; // next page number
 		$penultimate = $total - 1; // penultimate page number
@@ -163,20 +126,20 @@
 
 		if ($total > 1) {
 			// Filling of the character string to return
-			$pagination .= "<div class=\"pagination\">\n";
+			$pagination .= "<nav aria-label='Navigation bar'>\n";
 
 			/* =================================
 			 *  Display of the [previous] button
 			 * ================================= */
 			if ($current == 2) {
 				// the current page is 2, the button therefore returns to page 1
-				$pagination .= "<a href=\"{$url}{$link}1\">&larr;</a>";
+				$pagination .= "<button type='button' name='page-item' class='btn page-item' id='1'>&larr;</button>";
 			} elseif ($current > 2) {
 				// the current page is greater than 2, the button returns to the page whose number is immediately lower
-				$pagination .= "<a href=\"{$url}{$link}{$prev}\">&larr;</a>";
+				$pagination .= "<button type='button' name='page-item' class='btn page-item' id='{$prev}'>&larr;</button>";
 			} else {
 				// in all the others, if the page is 1: deactivation of the [previous] button
-				$pagination .= '<span class="inactive">&larr;</span>';
+				$pagination .= '<span class="btn inactive">&larr;</span>';
 			}
 
 			/**
@@ -190,16 +153,16 @@
 			 * =============================================== */
 			if ($total < 7 + ($adj * 2)) {
 				// Addition of page 1: we treat it outside the loop to have only index.php instead of index.php? P = 1 and thus avoid duplicate content
-				$pagination .= ($current == 1) ? '<span class="active">1</span>' : "<a href=\"{$url}{$link}1\">1</a>"; // Opérateur ternaire : (condition) ? 'valeur si vrai' : 'valeur si fausse'
+				$pagination .= ($current == 1) ? "<span class='btn active'>1</span>" : "<button type='button' name='page-item' class='btn page-item' id='1'>1</button>"; // ternary operator: (condition)? 'value if true' : 'value if false'
 
 				// For the remaining pages we use iterates
 				for ($i=2; $i<=$total; $i++) {
 					if ($i == $current) {
 						// The number of the current page is highlighted (cf. CSS)
-						$pagination .= "<span class=\"active\">{$i}</span>";
+						$pagination .= "<span class='btn active'>{$i}</span>";
 					} else {
 						// The others are displayed normally
-						$pagination .= "<a href=\"{$url}{$link}{$i}\">{$i}</a>";
+						$pagination .= "<button type='button' name='page-item' class='btn page-item' id='{$i}'>{$i}</button>";
 					}
 				}
 			}
@@ -214,14 +177,14 @@
 				 */
 				if ($current < 2 + ($adj * 2)) {
 					// Display of page number 1
-					$pagination .= ($current == 1) ? "<span class=\"active\">1</span>" : "<a href=\"{$url}{$link}1\">1</a>";
+					$pagination .= ($current == 1) ? "<span class='btn active'>1</span>" : "<button type='button' name='page-item' class='btn page-item' id='1'>1</button>";
 
 					// then the next eight
 					for ($i = 2; $i < 4 + ($adj * 2); $i++) {
 						if ($i == $current) {
-							$pagination .= "<span class=\"active\">{$i}</span>";
+							$pagination .= "<span class='btn active'>{$i}</span>";
 						} else {
-							$pagination .= "<a href=\"{$url}{$link}{$i}\">{$i}</a>";
+							$pagination .= "<button type='button' name='page-item' class='btn page-item' id='{$i}'>{$i}</button>";
 						}
 					}
 
@@ -229,8 +192,8 @@
 					$pagination .= '&hellip;';
 
 					// and finally the last two numbers
-					$pagination .= "<a href=\"{$url}{$link}{$penultimate}\">{$penultimate}</a>";
-					$pagination .= "<a href=\"{$url}{$link}{$total}\">{$total}</a>";
+					$pagination .= "<button type='button' name='page-item' class='btn page-item' id='{$penultimate}'>{$penultimate}</button>";
+					$pagination .= "<button type='button' name='page-item' class='btn page-item' id='{$total}'>{$total}</button>";
 				}
 				/**
 				 * Truncation 2: we are in the central part of our pagination, so we truncate the beginning and the end of the pagination.
@@ -239,24 +202,24 @@
 				 */
 				elseif ( (($adj * 2) + 1 < $current) && ($current < $total - ($adj * 2)) ) {
 					// Display of numbers 1 and 2
-					$pagination .= "<a href=\"{$url}{$link}1\">1</a>";
-					$pagination .= "<a href=\"{$url}{$link}2\">2</a>";
+					$pagination .= "<button type='button' name='page-item' class='btn page-item' id='1'>1</button>";
+					$pagination .= "<button type='button' name='page-item' class='btn page-item' id='2'>2</button>";
 					$pagination .= '&hellip;';
 
 					// the middle pages: the three preceding the current page, the current page, then the three following it
 					for ($i = $current - $adj; $i <= $current + $adj; $i++) {
 						if ($i == $current) {
-							$pagination .= "<span class=\"active\">{$i}</span>";
+							$pagination .= "<span class='btn active'>{$i}</span>";
 						} else {
-							$pagination .= "<a href=\"{$url}{$link}{$i}\">{$i}</a>";
+							$pagination .= "<button type='button' name='page-item' class='btn page-item' id='{$i}'>{$i}</button>";
 						}
 					}
 
 					$pagination .= '&hellip;';
 
 					// and the last two numbers
-					$pagination .= "<a href=\"{$url}{$link}{$penultimate}\">{$penultimate}</a>";
-					$pagination .= "<a href=\"{$url}{$link}{$total}\">{$total}</a>";
+					$pagination .= "<button type='button' name='page-item' class='btn page-item' id='{$penultimate}'>{$penultimate}</button>";
+					$pagination .= "<button type='button' name='page-item' class='btn page-item' id='{$total}'>{$total}</button>";
 				}
 				/**
 				 * Truncation 3: we are on the right-hand side, so we truncate the start of the pagination.
@@ -265,16 +228,16 @@
 				 */
 				else {
 					// Display of numbers 1 and 2
-					$pagination .= "<a href=\"{$url}{$link}1\">1</a>";
-					$pagination .= "<a href=\"{$url}{$link}2\">2</a>";
+					$pagination .= "<button type='button' name='page-item' class='btn page-item' id='1'>1</button>";
+					$pagination .= "<button type='button' name='page-item' class='btn page-item' id='2'>2</button>";
 					$pagination .= '&hellip;';
 
 					// then the last nine issues
 					for ($i = $total - (2 + ($adj * 2)); $i <= $total; $i++) {
 						if ($i == $current) {
-							$pagination .= "<span class=\"active\">{$i}</span>";
+							$pagination .= "<span class='btn active'>{$i}</span>";
 						} else {
-							$pagination .= "<a href=\"{$url}{$link}{$i}\">{$i}</a>";
+							$pagination .= "<button type='button' name='page-item' class='btn page-item' id='{$i}'>{$i}</button>";
 						}
 					}
 				}
@@ -284,45 +247,47 @@
 			 * Display of the [next] button
 			 * =============================== */
 			if ($current == $total)
-				$pagination .= "<span class=\"inactive\">&rarr;</span>\n";
+				$pagination .= "<span class='btn inactive'>&rarr;</span>\n";
 			else
-				$pagination .= "<a href=\"{$url}{$link}{$next}\">&rarr;</a>\n";
+				$pagination .= "<button type='button' name='page-item' class='btn page-item' id='{$next}'>&rarr;</button>\n";
 
 			// Closing the display <div>
-			$pagination .= "</div>\n";
+			$pagination .= "</nav>\n";
 		}
 
 		return ($pagination);
 	}
 		
-	function fncDisplayTableEditor($getParam, $pResult = array(), $pFileIndex = "", $pLinesPerPage)
+	function fncDisplayTableEditor($pOrder, $pResult = array())
 	{			
-		$table = "<table class='table table-striped table-bordered' id='exptable' border='1px' cellpadding='0px' cellspacing='0px'>";
-
-		if(sizeof($pResult) > 0)
-		{
-			$colSpan = sizeof($pResult[0]);
-		}
-		else
-		{
-			$colSpan = 1;
-		}
+		$table = "<table name='exptable' class='table table-striped table-bordered exptable' id='exptable' border='1px' cellpadding='0px' cellspacing='0px'>";
 			
 		if(sizeof($pResult))
 		{
 			
-			$table .= "<tr>";
+			$table .= "<thead><tr>";
 
 			$y=1;
 			foreach($pResult[0] as $key => $value)
 			{
-				$table .= sortHeader($getParam, $y, $key, "order");
+				$colNmame = $key;
+				$Array_order = explode(" ", $pOrder);
+				if($Array_order[0] == $y)
+				{
+					if($Array_order[1] == "ASC")
+					{
+						$colNmame = "<b>{$key}&uarr;</b>";		
+					}
+					else
+					{
+						$colNmame = "<b>{$key}&darr;</b>";		
+					}
+				}
+				$table .= "<th><button type='button' name='column-header' class='btn column-header' id='{$y}'>{$colNmame}</button></th>";
 				$y++;
 			}
 
-			$table .= "<th>Edit</th><th>Delete</th>";
-			
-			$table .= "</tr>";
+			$table .= "<th></th><th></th></tr></thead><tbody>";
 			
 			for($y=0; $y<sizeof($pResult); $y++)
 			{
@@ -336,60 +301,19 @@
 				$table .= "<td><button type='button' name='edit' class='btn btn-primary btn-xs edit' id='" . $pResult[$y]['id']['VALUE'] . 
 				"'>Edit</button></td>
 				<td><button type='button' name='delete' class='btn btn-danger btn-xs delete' id='" . $pResult[$y]['id']['VALUE'] . 
-				"'>Delete</button></td>";
-
-				$table .= "</tr>";
+				"'>Delete</button></td></tr>";
 			}
+
+			$table .= "</tbody>";
+
 		}
 		
 		else
 		{
-			$table .= "<tr>";
-			$table .= "<td>no results</td>";
-			$table .= "</tr>";
+			$table .= "<tr><td>no results</td></tr>";
 		}
 		
 		$table .= "</table></div><br /></div>";
-
-		$table .= "<p>"; 
-
-		$table .= "</p>";
-
-		$table .= "<form method='get'>";
-		$table .= "Lines/page :";
-    $table .= "<input type='hidden' name='page' value='";
-		$table .= $pFileIndex; 
-		$table .= "'>";
-		$table .= "<tr>
-		<td colspan='";
-		$table .= $colSpan;		
-		$table .= "'> <select name='linesPerPage'>";
-
-		$table .= "<option value='5'";
-		if($pLinesPerPage == 5) {$table .= " selected='selected'";} 
-		$table .= ">5 lines</option>";
-
-		$table .= "<option value='20'";
-		if($pLinesPerPage == 20) {$table .= " selected='selected'";} 
-		$table .= ">20 lines</option>";
-
-		$table .= "<option value='50'";
-		if($pLinesPerPage == 50) {$table .= " selected='selected'";} 
-		$table .= ">50 lines</option>";
-
-		$table .= "<option value='100'";
-		if($pLinesPerPage == 100) {$table .= " selected='selected'";} 
-		$table .= ">100 lines</option>";
-
-		$table .= "<option value='500'";
-		if($pLinesPerPage == 500) {$table .= " selected='selected'";} 
-		$table .= ">500 lines</option>";
-
-		$table .= "		</select>
-		<input type='Submit' name='oSubmit' value='Apply'>
-		</td>
-		</tr>";
-		$table .= "</form>";
 		
 		return($table);
 	}
