@@ -8,8 +8,7 @@ The editing functions are inspired by the blog [PHP Ajax Crud using JQuery UI Di
 ![image](https://user-images.githubusercontent.com/24400013/232900517-ad432ecc-dc68-41a2-b72c-3316ed3c0c72.png)
 ![image](https://user-images.githubusercontent.com/24400013/232900861-478fc865-1b89-40ee-94da-5097a5946772.png)
 ![image](https://user-images.githubusercontent.com/24400013/232901025-c907b7fa-5a25-4f9e-a5fc-45625bf9877e.png)
-![image](https://user-images.githubusercontent.com/24400013/232898911-502d46ef-0e9d-4921-afd4-1722cb13e84d.png)
-
+![image](https://user-images.githubusercontent.com/24400013/232901529-057b935e-757a-4424-bdaf-cfdd8bd11571.png)
 
 Requirements
 ------------
