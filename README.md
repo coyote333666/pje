@@ -5,8 +5,8 @@ Client and server side library of simple functions in JQUERY UI and PHP for edit
 The editing functions are inspired by the blog [PHP Ajax Crud using JQuery UI Dialog][8] from [Weblesson][9]
 
 ![Capture d’écran du 2023-10-03 10-46-41](https://github.com/coyote333666/pje/assets/24400013/2c6e409a-88d4-47c9-aa9b-d1b88bc5af67)
-![Capture d’écran du 2023-10-03 10-47-18](https://github.com/coyote333666/pje/assets/24400013/078c7700-f741-40a6-90bb-4c8d6f066183)
-![Capture d’écran du 2023-10-03 10-47-38](https://github.com/coyote333666/pje/assets/24400013/1fd1c3dd-6ee7-4e96-9101-24aec7bc35b4)
+![Capture d’écran du 2023-10-03 14-51-14](https://github.com/coyote333666/pje/assets/24400013/c5300a79-a380-4729-b67e-91a0e08daad2)
+![Capture d’écran du 2023-10-03 14-51-30](https://github.com/coyote333666/pje/assets/24400013/cfd162f7-ba7b-42e2-a389-1acb22525120)
 ![Capture d’écran du 2023-10-03 10-47-55](https://github.com/coyote333666/pje/assets/24400013/788458d9-b54a-478d-8676-f53906b1defc)
 
 Requirements
