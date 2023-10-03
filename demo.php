@@ -52,7 +52,7 @@
 </div>
 
 
-<div id="user_dialog" title="Add Data">
+<div id="user_dialog" title="Add or Edit Data">
   <form method="post" id="user_form">
     <div class="form-group">
       <label>Enter Column 1</label>
