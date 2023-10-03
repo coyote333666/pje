@@ -4,11 +4,10 @@ Client and server side library of simple functions in JQUERY UI and PHP for edit
 
 The editing functions are inspired by the blog [PHP Ajax Crud using JQuery UI Dialog][8] from [Weblesson][9]
 
-![image](https://user-images.githubusercontent.com/24400013/232899941-93e4c8fd-f55a-40e8-989b-3c061eded5f0.png)
-![image](https://user-images.githubusercontent.com/24400013/232901912-4ccf9840-f7b6-4a20-a20d-2cf05d7a8088.png)
-![image](https://user-images.githubusercontent.com/24400013/232902025-6b71c2cc-d561-4d5a-9d1f-735966b05976.png)
-![image](https://user-images.githubusercontent.com/24400013/232902106-dd795234-f55b-4546-92db-9fec946364e2.png)
-![image](https://user-images.githubusercontent.com/24400013/232902252-7b098361-b4f4-4e02-b9b8-5e967dddf219.png)
+![Capture d’écran du 2023-10-03 10-46-41](https://github.com/coyote333666/pje/assets/24400013/2c6e409a-88d4-47c9-aa9b-d1b88bc5af67)
+![Capture d’écran du 2023-10-03 10-47-18](https://github.com/coyote333666/pje/assets/24400013/078c7700-f741-40a6-90bb-4c8d6f066183)
+![Capture d’écran du 2023-10-03 10-47-38](https://github.com/coyote333666/pje/assets/24400013/1fd1c3dd-6ee7-4e96-9101-24aec7bc35b4)
+![Capture d’écran du 2023-10-03 10-47-55](https://github.com/coyote333666/pje/assets/24400013/788458d9-b54a-478d-8676-f53906b1defc)
 
 Requirements
 ------------
