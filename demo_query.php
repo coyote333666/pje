@@ -1,5 +1,15 @@
 <?php
 
+	
+
+	if(($_POST["whereClause"] !== '') AND isset($_POST["whereClause"]))
+	{
+		$query .=	"WHERE column_1::varchar LIKE '%" . $_POST["whereClause"] . "%' 
+		OR column_2::varchar LIKE '%" . $_POST["whereClause"] . "%' 
+		OR column_3 LIKE '%" . $_POST["whereClause"] . "%' 
+		";
+	}	
+
 	if(($_POST["order"] !== false) AND isset($_POST["order"]))
 	{
 		$query .=	"ORDER BY " . $_POST["order"] ;
@@ -12,22 +22,22 @@
 	}
 
 	if(($_POST["linesPerPage"] !== 'false') AND isset($_POST["linesPerPage"]))
-  {	
-    $linesPerPage 			= $_POST["linesPerPage"];			
-  } 
-  else 
-  {
-    $linesPerPage					= 5;
-  }
+  	{	
+  	  $linesPerPage 			= $_POST["linesPerPage"];			
+  	} 
+  	else 
+  	{
+  	  $linesPerPage					= 5;
+  	}
 
 	if(($_POST["currentPage"] !== 'false')	AND isset($_POST["currentPage"]))
-  {	
-    $currentPage 				= $_POST["currentPage"];		
-  } 
-  else 
-  {
-    $currentPage					= 1;
-  }
+  	{	
+  	  $currentPage 				= $_POST["currentPage"];		
+  	} 
+  	else 
+  	{
+  	  $currentPage					= 1;
+  	}
 
 	$queryCount = "SELECT count(1) as \"Count\" FROM (" . $query . ") s1";	
 
@@ -39,6 +49,7 @@
 
 	# display query 
 	# echo('<pre>' . $query . '</pre>');
+	# exit();
 	
 	$recordset = fncQueryPg($query);
 		

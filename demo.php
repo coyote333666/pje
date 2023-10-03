@@ -23,6 +23,16 @@
   <br />
     <h3 align='center'>DEMO pje - PHP Jquery UI Editor</h3><br />
   <br />
+  <div class="col-9">
+        <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-lg" placeholder="Search..." id="searchinput">
+        </div>
+  </div>
+
   <div align='right' style='margin-bottom:5px;'>
     <button type='button' name='add' id='add' class='btn btn-success btn-xs'>Add</button>
   </div>

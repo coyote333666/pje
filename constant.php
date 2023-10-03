@@ -15,8 +15,8 @@
 
 define("FILE_FUNCTION"		, "function.php");
 define("FILE_INDEX"				, "index.php");
-define("FILE_QUERY"				, "query.php");
 define("FILE_DEMO"				, "demo.php");
+define("FILE_QUERY"				, "demo_query.php");
 define("FILE_DEMO_FETCH"	, "demo_fetch.php");
 define("FILE_DEMO_ACTION"	, "demo_action.php");
 define("FILE_DEMO_EDITOR"		, "demo_editor.php");
@@ -44,6 +44,10 @@ define("FILE_JQUERY_UI_CSS"	, DIR_JQUERY_UI	. "themes/smoothness/jquery-ui.min.c
 define("DIR_BOOTSTRAP"			, "../node_modules/bootstrap/dist/");
 define("FILE_BOOTSTRAP_JS"			, DIR_BOOTSTRAP	. "js/bootstrap.min.js");
 define("FILE_BOOTSTRAP_CSS"			, DIR_BOOTSTRAP	. "css/bootstrap.min.css");
+
+// font-awesome
+define("DIR_FONT_AWESOME"			, "../node_modules/font-awesome/");
+define("FILE_FONT_AWESOME_CSS"		, DIR_FONT_AWESOME	. "css/font-awesome.min.css");
 
 // TableExport.js
 define("FILE_DIR_NODE_MODULES"		, "../node_modules/");		

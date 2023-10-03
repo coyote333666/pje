@@ -58,7 +58,8 @@ Install dependencies:
 ```bash
 cd /var/www/html
 sudo yarn add jquery-ui
-sudo npm install tableexport
+sudo yarn add tableexport
+sudo yarn add font-awesome
 sudo yarn add bootstrap
 ```
 

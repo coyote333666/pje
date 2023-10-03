@@ -17,11 +17,12 @@ sessionStorage.setItem("linesPerPage",5);
 sessionStorage.setItem("currentPage",1);
 sessionStorage.setItem("order",1);
 sessionStorage.setItem("direction","ASC");
+sessionStorage.setItem("whereClause","");
 
 $(document).ready(function(){  
 
 	$("select.lpp").change(function(){
-	  var selectedLpp = $(this).children("option:selected").val();
+	  	var selectedLpp = $(this).children("option:selected").val();
 		sessionStorage.setItem("linesPerPage",selectedLpp);
 		sessionStorage.setItem("currentPage",1);
 		load_data();
@@ -60,6 +61,7 @@ $(document).ready(function(){
 			data: { 
     		linesPerPage: sessionStorage.getItem("linesPerPage"), 
     		currentPage: sessionStorage.getItem("currentPage"), 
+			whereClause: sessionStorage.getItem("whereClause"), 
     		order: sessionStorage.getItem("order") + " " + sessionStorage.getItem("direction")
  			},			
 			success:function(data)
@@ -68,7 +70,7 @@ $(document).ready(function(){
 			}
 		});
 	}
-   
+
 	$("#user_dialog").dialog({
 		autoOpen:false,
 		width:400
@@ -177,6 +179,15 @@ $(document).ready(function(){
 		});
 	});
 
+	$("#searchinput").on("keyup", function () {
+	  	const searchText = $(this).val();
+		var action = 'search';
+		sessionStorage.setItem("linesPerPage",5);
+		sessionStorage.setItem("currentPage",1);
+		sessionStorage.setItem("whereClause",searchText);
+		load_data();
+	});
+
 	$('#delete_confirmation').dialog({
 		autoOpen:false,
 		modal: true,
@@ -207,6 +218,5 @@ $(document).ready(function(){
 		var id = $(this).attr("id");
 		$('#delete_confirmation').data('id', id).dialog('open');
 	});
-
 });  
 </script>
