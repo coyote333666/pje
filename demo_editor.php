@@ -182,7 +182,6 @@ $(document).ready(function(){
 	$("#searchinput").on("keyup", function () {
 	  	const searchText = $(this).val();
 		var action = 'search';
-		sessionStorage.setItem("linesPerPage",5);
 		sessionStorage.setItem("currentPage",1);
 		sessionStorage.setItem("whereClause",searchText);
 		load_data();
