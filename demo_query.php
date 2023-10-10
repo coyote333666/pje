@@ -10,7 +10,7 @@
 		";
 	}	
 
-	if(($_POST["order"] !== false) AND isset($_POST["order"]))
+	if(isset($_POST["order"]))
 	{
 		$query .=	"ORDER BY " . $_POST["order"] ;
 		$order = $_POST["order"];
@@ -21,7 +21,7 @@
 		$order = "1 ASC";
 	}
 
-	if(($_POST["linesPerPage"] !== 'false') AND isset($_POST["linesPerPage"]))
+	if(isset($_POST["linesPerPage"]))
   	{	
   	  $linesPerPage 			= $_POST["linesPerPage"];			
   	} 
@@ -30,7 +30,7 @@
   	  $linesPerPage					= 5;
   	}
 
-	if(($_POST["currentPage"] !== 'false')	AND isset($_POST["currentPage"]))
+	if(isset($_POST["currentPage"]))
   	{	
   	  $currentPage 				= $_POST["currentPage"];		
   	} 

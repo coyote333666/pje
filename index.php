@@ -18,7 +18,7 @@
 
 	require_once(FILE_FUNCTION);
 
-	if(($_POST["page"] !== 'false') AND isset($_POST["page"]))
+	if(isset($_POST["page"]))
 	{
 		require_once($_POST["page"]);
 	}
